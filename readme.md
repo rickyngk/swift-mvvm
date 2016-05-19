@@ -2,7 +2,7 @@
 
 There are many ways to apply MVVM concept, and this is one variant
 
-<img src="https://gitlab.com/duy.nguyen.pops/swift-mvvm-examples/raw/master/sample-3/assets/MVVM.png" alt="MVVM flow" height="400px"/>
+<img src="https://raw.githubusercontent.com/rickyngk/swift-mvvm/master/assets/MVVM.png" alt="MVVM flow" height="400px"/>
 
 In this sample, we start working with model and use some utility frameworks for easier life . We use:
   - [RxSwift & RxCocoa](https://github.com/ReactiveX/RxSwift): use for pub/sub method for data binding & UI binding
