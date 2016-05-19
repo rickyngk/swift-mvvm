@@ -25,7 +25,7 @@ Projects structures:
   - **helpers**: helper components
 
 ## 1. Model
-We use [Realm](https://realm.io/docs/swift/latest/ "Realm") to define mode, for exmaple:
+We use [Realm](https://realm.io/docs/swift/latest/ "Realm") to define model, for exmaple:
 
 ```swift
 class Repo: Object {
