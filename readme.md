@@ -93,7 +93,7 @@ struct GithubRepoViewState: ViewState {
 ```
 There're two properties in this view-state:  `isLoading`, `reportData`. Those properties will be mapped to UI components later
 
-**Important**: all properties SHOULD be **immutable**. Any change will create a new ViewState instance. For example, we don't do this:
+**Important**: viewState SHOULD be **immutable**. Any change will create a new ViewState instance follow flow `oldViewState --> execute(command) --> newViewState`. For example, we don't do this:
 ```swift
 let vs = GithubRepoViewState(isLoading: true, [Repo]())
 vs.isLoading  = false //don't do this
@@ -249,5 +249,5 @@ if oldViewState == nil || oldViewState!.something != newViewState.something {
     //TODO
 }
 ```
-`oldViewState == nil` mean this is first time init, and there's no old state
+`oldViewState == nil` means this is first time init, and there's no old state
 
