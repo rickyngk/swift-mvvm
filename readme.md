@@ -5,9 +5,9 @@ There are many ways to apply MVVM concept, and this is one variant
 <img src="https://raw.githubusercontent.com/rickyngk/swift-mvvm/master/assets/MVVM.png" alt="MVVM flow" height="400px"/>
 
 In this sample, we start working with model and use some utility frameworks for easier life . We use:
-  - [RxSwift & RxCocoa](https://github.com/ReactiveX/RxSwift): use for pub/sub method for data binding & UI binding
-  - [RealmSwift](https://realm.io/docs/swift/latest/): use Realm for data model
-  - [Alamofire](https://github.com/Alamofire/Alamofire) & RxAlamofire(https://github.com/RxSwiftCommunity/RxAlamofire): HTTP Networking
+  - [RxSwift & RxCocoa](https://github.com/ReactiveX/RxSwift): pub/sub method for data binding & UI binding
+  - [RealmSwift](https://realm.io/docs/swift/latest/): use for constructing data model
+  - [Alamofire](https://github.com/Alamofire/Alamofire) & [RxAlamofire](https://github.com/RxSwiftCommunity/RxAlamofire): HTTP Networking
 
 Projects structures:
 
