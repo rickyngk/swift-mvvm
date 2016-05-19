@@ -1,11 +1,13 @@
-# MVVM example 3
+# Swift MVVM
+
+There are many ways to apply MVVM concept, and this is one variant
 
 <img src="https://gitlab.com/duy.nguyen.pops/swift-mvvm-examples/raw/master/sample-3/assets/MVVM.png" alt="MVVM flow" height="400px"/>
 
-In this sample, we start working with mode and use some utility frameworks for make your life easier. Recommend framework:
-  - RxSwift/RxCocoa: use for pub/sub method for data binding & UI binding
-  - RealmSwift: use Realm for data model
-  - Alamofire & RxAlamofire: HTTP Networking
+In this sample, we start working with model and use some utility frameworks for easier life . We use:
+  - [RxSwift & RxCocoa](https://github.com/ReactiveX/RxSwift): use for pub/sub method for data binding & UI binding
+  - [RealmSwift](https://realm.io/docs/swift/latest/): use Realm for data model
+  - [Alamofire](https://github.com/Alamofire/Alamofire) & RxAlamofire(https://github.com/RxSwiftCommunity/RxAlamofire): HTTP Networking
 
 Projects structures:
 
@@ -66,8 +68,8 @@ class RepoStoreImpl: RepoStore {
 
 ## 3. ViewModels
 A viewmodel take apart:
-  - ViewModel <~> View: See [ViewModel Protocol](### 3.2. ViewModel Protocol)
-    + store [ViewState](### 3.1. ViewState)
+  - ViewModel <~> View: See [ViewModel Protocol](#32-viewmodel-protocol)
+    + store [ViewState](#31-viewstate)
     + handle command sent from View
     + notify View whenever viewState is changed
 
@@ -248,5 +250,4 @@ if oldViewState == nil || oldViewState!.something != newViewState.something {
 }
 ```
 `oldViewState == nil` mean this is first time init, and there's no old state
-
 
