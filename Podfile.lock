@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (3.4.0)
+  - Realm (0.102.1):
+    - Realm/Headers (= 0.102.1)
+  - Realm/Headers (0.102.1)
+  - RealmSwift (0.102.1):
+    - Realm (= 0.102.1)
+  - RxAlamofire (2.4):
+    - RxAlamofire/Core (= 2.4)
+  - RxAlamofire/Core (2.4):
+    - Alamofire (~> 3.4)
+    - RxSwift (~> 2.4)
+  - RxBlocking (2.5.0):
+    - RxSwift (~> 2.5)
+  - RxCocoa (2.5.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.5.0)
+  - RxTests (2.5.0):
+    - RxSwift (~> 2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - RealmSwift
+  - RxAlamofire
+  - RxBlocking (~> 2.0)
+  - RxCocoa (~> 2.0)
+  - RxSwift (~> 2.0)
+  - RxTests (~> 2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Realm: 5254be610db3e5024879684717bf038990bb59ec
+  RealmSwift: 3e24e6bcf56d98ccc134f4909e00839b81a659af
+  RxAlamofire: b72b5ca3e46b0d0cae0a19f8287b5f07a99866a7
+  RxBlocking: 595d9ab56dde6b00beaa5aba40e95b150d2135f1
+  RxCocoa: e1b1562e57a554d0fb2aabf9d71b637f177257c7
+  RxSwift: 402b41a50e922a0368fc14cb3bc9f4427920e8ae
+  RxTests: 1b13bea0a138552b52aeead549ef08d578bcda9e
+
+PODFILE CHECKSUM: a06358b3a75bd85eb1452e71835457449afdd681
+
+COCOAPODS: 1.0.0
