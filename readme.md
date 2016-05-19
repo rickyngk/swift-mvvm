@@ -67,7 +67,7 @@ class RepoStoreImpl: RepoStore {
 ```
 
 ## 3. ViewModels
-A viewmodel take apart:
+A viewmodel takes apart:
   - ViewModel <~> View: See [ViewModel Protocol](#32-viewmodel-protocol)
     + store [ViewState](#31-viewstate)
     + handle command sent from View
