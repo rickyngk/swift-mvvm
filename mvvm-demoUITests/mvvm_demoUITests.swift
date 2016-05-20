@@ -37,19 +37,23 @@ class mvvm_demoUITests: XCTestCase {
     }
     
     func testSearch() {
+        waitForElementToAppear(app.buttons["Reload"], timeout: 3)
+        XCTAssertFalse(app.activityIndicators["In progress"].hittable)
+        
         //case 1: user inputs text, automatically search after 1 sec
         let reloadElementsQuery = self.app.otherElements.containingType(.Button, identifier:"Reload")
         let textField = reloadElementsQuery.childrenMatchingType(.TextField).element
         textField.tap()
         textField.typeText("swift")
         waitForElementToAppear(self.app.tables.cells.staticTexts["apple/swift"], timeout: 10)
-        
+        sleep(1)
         
         //case 2: user click refresh
         XCUIApplication().buttons["Reload"].tap()
-        XCTAssert(self.app.activityIndicators["In progress"].exists)
+        XCTAssert(app.activityIndicators["In progress"].hittable)
         waitForElementToAppear(self.app.tables.cells.staticTexts["apple/swift"], timeout: 10)
-        XCTAssertFalse(self.app.activityIndicators["In progress"].exists)
+        sleep(3)
+        XCTAssertFalse(app.activityIndicators["In progress"].hittable)
     }
     
     

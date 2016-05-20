@@ -13,15 +13,17 @@ import RxCocoa
 class CommonViewModel<T>: ViewModelProtocol {
     var onViewStateChanged: ((ViewModelProtocol, ViewState, ViewState?) -> ())?
     var viewStateStream = PublishSubject<(ViewState, ViewState)>()
+    private var _oldState: T?
     
     var viewState:T?  {
         willSet(newState) {
-            let ns:ViewState = newState as! ViewState
-            let current = self.viewState as? ViewState
-            if (current == nil) {
-                viewStateStream.onNext((ns, ViewStateNull.sharedInstance))
+            _oldState = self.viewState
+        }
+        didSet {
+            if (_oldState == nil) {
+                viewStateStream.onNext((self.viewState as! ViewState, ViewStateNull.sharedInstance))
             } else {
-                viewStateStream.onNext((ns, current!))
+                viewStateStream.onNext((self.viewState as! ViewState, _oldState as! ViewState))
             }
         }
     }
