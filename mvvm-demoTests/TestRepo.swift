@@ -9,7 +9,7 @@
 import XCTest
 @testable import mvvm_demo
 
-class Repo: XCTestCase {
+class TestRepo: XCTestCase {
     
     override func setUp() {
         super.setUp()

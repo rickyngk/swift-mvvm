@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 @testable import mvvm_demo
 
-class RepoStore: XCTestCase {
+class TestRepoStore: XCTestCase {
     
     private let bag = DisposeBag()
     

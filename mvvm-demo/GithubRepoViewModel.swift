@@ -34,7 +34,12 @@ class GithubRepoViewModel: CommonViewModel<GithubRepoViewState> {
             switch command {
             case .FetchData:
                 let q:String = data as! String
-                self.viewState = GithubRepoViewState(isLoading: true, repoData: self.viewState!.repoData)
+                if self.viewState == nil {
+                    self.viewState = GithubRepoViewState(isLoading: true, repoData: [Repo]())
+                } else {
+                    self.viewState = GithubRepoViewState(isLoading: true, repoData: self.viewState!.repoData)
+                }
+                
                 self.repoStore!
                     .fetchRepo(q)
                     .driveNext({[unowned self] (repos) in

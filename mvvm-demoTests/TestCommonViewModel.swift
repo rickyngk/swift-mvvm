@@ -9,7 +9,7 @@
 import XCTest
 @testable import mvvm_demo
 
-class CommonViewModel: XCTestCase {
+class TestTestCommonViewModel: XCTestCase {
 
     override func setUp() {
         super.setUp()
