@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 class CommonViewModel<T>: ViewModelProtocol {
-    var onViewStateChanged: ((ViewModelProtocol, ViewState, ViewState?) -> ())?
     var viewStateStream = PublishSubject<(ViewState, ViewState)>()
     private var _oldState: T?
     

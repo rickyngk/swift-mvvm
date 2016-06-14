@@ -13,6 +13,7 @@
 		DF0D14531CEC19C500CB7BB1 /* RepoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D14521CEC19C500CB7BB1 /* RepoStore.swift */; };
 		DF0D14551CEC1AC800CB7BB1 /* RepoStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D14541CEC1AC800CB7BB1 /* RepoStoreImpl.swift */; };
 		DF1FF3341CEAF1590065C636 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1FF3331CEAF1590065C636 /* ViewModelProtocol.swift */; };
+		DF2033711D0FAF3D00C2861D /* Mvvm+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2033701D0FAF3D00C2861D /* Mvvm+UIViewController.swift */; };
 		DF95C22C1CEAB0BB00DE2D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95C22B1CEAB0BB00DE2D8D /* AppDelegate.swift */; };
 		DF95C22E1CEAB0BB00DE2D8D /* GithubRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95C22D1CEAB0BB00DE2D8D /* GithubRepoViewController.swift */; };
 		DF95C2311CEAB0BB00DE2D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF95C22F1CEAB0BB00DE2D8D /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		DF0D14521CEC19C500CB7BB1 /* RepoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoStore.swift; sourceTree = "<group>"; };
 		DF0D14541CEC1AC800CB7BB1 /* RepoStoreImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoStoreImpl.swift; sourceTree = "<group>"; };
 		DF1FF3331CEAF1590065C636 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		DF2033701D0FAF3D00C2861D /* Mvvm+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mvvm+UIViewController.swift"; sourceTree = "<group>"; };
 		DF95C2281CEAB0BB00DE2D8D /* mvvm-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF95C22B1CEAB0BB00DE2D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF95C22D1CEAB0BB00DE2D8D /* GithubRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				DF97A62E1CEC58A900F45E91 /* CommonViewModel.swift */,
 				DF1FF3331CEAF1590065C636 /* ViewModelProtocol.swift */,
 				DFC4FD331CECD52C002507E0 /* CommonViewModel~Test.swift */,
+				DF2033701D0FAF3D00C2861D /* Mvvm+UIViewController.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				DFC4FD341CECD52C002507E0 /* CommonViewModel~Test.swift in Sources */,
 				DF97A62B1CEC56E500F45E91 /* GithubRepoTableViewCell.swift in Sources */,
 				DF0D14501CEC176900CB7BB1 /* Repo.swift in Sources */,
+				DF2033711D0FAF3D00C2861D /* Mvvm+UIViewController.swift in Sources */,
 				DF95C22C1CEAB0BB00DE2D8D /* AppDelegate.swift in Sources */,
 				DF95C25A1CEAB1D400DE2D8D /* GithubRepoViewModel.swift in Sources */,
 				DF97A62F1CEC58A900F45E91 /* CommonViewModel.swift in Sources */,
