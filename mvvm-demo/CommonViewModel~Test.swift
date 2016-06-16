@@ -12,7 +12,7 @@ struct TestCommonViewState: ViewState {
     let name:String
 }
 
-class TestCommonViewModel: CommonViewModel<TestCommonViewState> {
+class TestCommonViewModel: CommonViewModel {
     internal enum Command:Int {
         case UpdateData = 0
     }

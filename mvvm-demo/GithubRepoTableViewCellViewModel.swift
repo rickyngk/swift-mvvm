@@ -14,7 +14,7 @@ struct GithubRepoTableViewCellViewState: ViewState {
     let name:String;
 }
 
-class GithubRepoTableViewCellViewModel: CommonViewModel<GithubRepoTableViewCellViewState> {
+class GithubRepoTableViewCellViewModel: CommonViewModel {
     internal enum Command:Int {
         case UpdateData = 0
     }

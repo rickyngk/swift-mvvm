@@ -20,7 +20,7 @@ struct GithubRepoViewState: ViewState {
     }
 }
 
-class GithubRepoViewModel: CommonViewModel<GithubRepoViewState> {
+class GithubRepoViewModel: CommonViewModel {
     internal enum Command:Int {
         case FetchData = 1
     }
@@ -30,6 +30,7 @@ class GithubRepoViewModel: CommonViewModel<GithubRepoViewState> {
     
     
     override func execute(command:Any, data:AnyObject? = NSNull()) {
+        let vs = self.viewState as? GithubRepoViewState
         if let command:Command = command as? Command {
             switch command {
             case .FetchData:
@@ -37,7 +38,7 @@ class GithubRepoViewModel: CommonViewModel<GithubRepoViewState> {
                 if self.viewState == nil {
                     self.viewState = GithubRepoViewState(isLoading: true, repoData: [Repo]())
                 } else {
-                    self.viewState = GithubRepoViewState(isLoading: true, repoData: self.viewState!.repoData)
+                    self.viewState = GithubRepoViewState(isLoading: true, repoData: vs!.repoData)
                 }
                 
                 self.repoStore!

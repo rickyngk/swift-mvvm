@@ -10,19 +10,20 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class CommonViewModel<T>: ViewModelProtocol {
+class CommonViewModel: ViewModelProtocol {
     var viewStateStream = PublishSubject<(ViewState, ViewState)>()
-    private var _oldState: T?
+    var _oldState: ViewState?
+    var disposeBag = DisposeBag()
     
-    var viewState:T?  {
+    var viewState:ViewState?  {
         willSet(newState) {
             _oldState = self.viewState
         }
         didSet {
             if (_oldState == nil) {
-                viewStateStream.onNext((self.viewState as! ViewState, ViewStateNull.sharedInstance))
+                viewStateStream.onNext((self.viewState!, ViewStateNull.sharedInstance))
             } else {
-                viewStateStream.onNext((self.viewState as! ViewState, _oldState as! ViewState))
+                viewStateStream.onNext((self.viewState!, _oldState!))
             }
         }
     }
@@ -30,10 +31,14 @@ class CommonViewModel<T>: ViewModelProtocol {
     func execute(command:Any, data:AnyObject? = NSNull()) {}
     
     func getViewState() -> ViewState {
-        return viewState! as! ViewState
+        return viewState!
     }
     
     func setViewState(vs: ViewState) {
-        self.viewState = vs as? T
+        self.viewState = vs
     }
 }
+
+
+
+

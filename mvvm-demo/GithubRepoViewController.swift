@@ -11,8 +11,7 @@ import RxSwift
 import RxCocoa
 import RxAlamofire
 
-class GithubRepoViewController: MvvmCommonViewController<GithubRepoViewModel, GithubRepoViewState> {
-
+class GithubRepoViewController: MvvmUIViewController {
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -20,19 +19,15 @@ class GithubRepoViewController: MvvmCommonViewController<GithubRepoViewModel, Gi
     
     private var tableData = BehaviorSubject<[Repo]>(value: [])
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.injectViewModel(GithubRepoViewModel().injectRepoStore(RepoStoreImpl()))
-        self.mvvmDelegate = self;
-       
-        self.mvvmViewModel?.setViewState(GithubRepoViewState(isLoading: false, repoData: [Repo]()))
         
+        self.injectViewModel(GithubRepoViewModel().injectRepoStore(RepoStoreImpl())).setViewState(GithubRepoViewState(isLoading: false, repoData: [Repo]()))
         tableData.bindTo(self.tableView.rx_itemsWithCellIdentifier("repoCell")) {
             (index, repo: Repo, cell:GitHubRepoTableViewCell) in
                 cell.updateCell(repo)
         }
-        .addDisposableTo(self.mvvmBag)
+        .addDisposableTo(self.viewModel!.disposeBag)
         
         
         query.rx_text.asDriver()
@@ -40,9 +35,9 @@ class GithubRepoViewController: MvvmCommonViewController<GithubRepoViewModel, Gi
             .throttle(1.0)
             .distinctUntilChanged()
             .driveNext { (text) in
-                self.mvvmViewModel?.execute(GithubRepoViewModel.Command.FetchData, data: text)
+                self.viewModel?.execute(GithubRepoViewModel.Command.FetchData, data: text)
             }
-            .addDisposableTo(self.mvvmBag)
+            .addDisposableTo((self.viewModel?.disposeBag)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,18 +46,23 @@ class GithubRepoViewController: MvvmCommonViewController<GithubRepoViewModel, Gi
     }
     
     @IBAction func onButtonClicked(sender: AnyObject) {
-        self.mvvmViewModel?.execute(GithubRepoViewModel.Command.FetchData, data: self.query.text)
+        self.viewModel?.execute(GithubRepoViewModel.Command.FetchData, data: self.query.text)
     }
 }
 
 
-extension GithubRepoViewController: MvvmViewEventDelegate {
-    func onMvvmViewStateInit(viewState: Any) {
+extension GithubRepoViewController: MvvmViewCommonDelegate {
+    
+    func onMvvmViewStateInit(viewState: ViewState) {
         let viewState = viewState as! GithubRepoViewState
         self.tableData.onNext(viewState.repoData)
+        
+        self.myButton.enabled = !viewState.isLoading
+        self.loadingIndicator.hidden = !viewState.isLoading
+        self.loadingIndicator.startAnimating()
     }
     
-    func onMvvmViewStateChanged(newViewState: Any, oldViewState: Any) {
+    func onMvvmViewStateChanged(newViewState: ViewState, oldViewState: ViewState) {
         let newViewState = newViewState as! GithubRepoViewState
         let oldViewState = oldViewState as! GithubRepoViewState
         if oldViewState.repoData != newViewState.repoData {
@@ -70,13 +70,10 @@ extension GithubRepoViewController: MvvmViewEventDelegate {
         }
         
         self.myButton.enabled = !newViewState.isLoading
-        //self.loadingIndicator.hidden = !newViewState.isLoading
-        //self.loadingIndicator.startAnimating()
-
+        self.loadingIndicator.hidden = !newViewState.isLoading
+        self.loadingIndicator.startAnimating()
     }
 }
-
-
 
 
 

@@ -11,33 +11,32 @@ import UIKit
 import RxSwift
 
 
-protocol MvvmViewEventDelegate: class {
-    func onMvvmViewStateInit(viewState: Any)
-    func onMvvmViewStateChanged(newViewState: Any, oldViewState: Any)
+protocol MvvmViewCommonDelegate {
+    var viewModel:CommonViewModel? {set get}
+    
+    func onMvvmViewStateInit(viewState: ViewState)
+    func onMvvmViewStateChanged(newViewState: ViewState, oldViewState: ViewState)
+    
+    func injectViewModel(viewModel: CommonViewModel) -> CommonViewModel
 }
 
-class MvvmCommonViewController<ViewModelClass, ViewStateStruct>: UIViewController {
-    weak var mvvmDelegate:MvvmViewEventDelegate?
-    let mvvmBag = DisposeBag()
-    var mvvmViewModel:ViewModelClass? = nil
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    func injectViewModel(viewModel: CommonViewModel<ViewStateStruct>) {
-        self.mvvmViewModel = viewModel as? ViewModelClass
+extension MvvmViewCommonDelegate where Self: MvvmUIViewController {
+    func injectViewModel(viewModel: CommonViewModel) -> CommonViewModel {
         viewModel.viewStateStream.subscribeNext { (state) in
-            let newViewState = state.0 as! GithubRepoViewState
-            let oldViewState = state.1 as? GithubRepoViewState
-            
-            if oldViewState == nil { //update data table
-                self.mvvmDelegate?.onMvvmViewStateInit(newViewState)
+            let newViewState = state.0
+        
+            if state.1 is ViewStateNull { //update data table
+                self.onMvvmViewStateInit(newViewState)
             } else {
-                self.mvvmDelegate?.onMvvmViewStateChanged(newViewState, oldViewState: oldViewState)
+                self.onMvvmViewStateChanged(newViewState, oldViewState: state.1 as ViewState)
             }
         }
-        .addDisposableTo(self.mvvmBag)
-
+        .addDisposableTo(viewModel.disposeBag)
+        self.viewModel = viewModel
+        return viewModel
     }
+}
+
+class MvvmUIViewController: UIViewController {
+    var viewModel:CommonViewModel? = nil
 }
