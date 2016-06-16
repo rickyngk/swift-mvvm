@@ -22,10 +22,10 @@ class TestTestCommonViewModel: XCTestCase {
     }
 
     func testAction() {
-        let viewModel = TestCommonViewModel()
+        let viewModel = TestMvvmCommonViewModel()
         viewModel.setViewState(TestCommonViewState(name: "1"))
         XCTAssert((viewModel.getViewState() as! TestCommonViewState).name == "1")
-        viewModel.execute(TestCommonViewModel.Command.UpdateData, data: "2")
+        viewModel.execute(TestMvvmCommonViewModel.Command.UpdateData, data: "2")
         XCTAssert((viewModel.getViewState() as! TestCommonViewState).name == "2")
     }
 

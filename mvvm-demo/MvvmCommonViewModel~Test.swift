@@ -1,5 +1,5 @@
 //
-//  CommonViewModel~Test.swift
+//  MvvmCommonViewModel~Test.swift
 //  mvvm-demo
 //
 //  Created by NGUYEN KHANH DUY on 5/18/16.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct TestCommonViewState: ViewState {
+struct TestCommonViewState: MvvmViewState {
     let name:String
 }
 
-class TestCommonViewModel: CommonViewModel {
+class TestMvvmCommonViewModel: MvvmCommonViewModel {
     internal enum Command:Int {
         case UpdateData = 0
     }

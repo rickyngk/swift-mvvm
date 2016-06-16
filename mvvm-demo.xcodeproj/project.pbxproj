@@ -12,7 +12,7 @@
 		DF0D14501CEC176900CB7BB1 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D144F1CEC176900CB7BB1 /* Repo.swift */; };
 		DF0D14531CEC19C500CB7BB1 /* RepoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D14521CEC19C500CB7BB1 /* RepoStore.swift */; };
 		DF0D14551CEC1AC800CB7BB1 /* RepoStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D14541CEC1AC800CB7BB1 /* RepoStoreImpl.swift */; };
-		DF1FF3341CEAF1590065C636 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1FF3331CEAF1590065C636 /* ViewModelProtocol.swift */; };
+		DF1FF3341CEAF1590065C636 /* MvvmViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1FF3331CEAF1590065C636 /* MvvmViewModelProtocol.swift */; };
 		DF2033711D0FAF3D00C2861D /* Mvvm+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2033701D0FAF3D00C2861D /* Mvvm+UIViewController.swift */; };
 		DF95C22C1CEAB0BB00DE2D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95C22B1CEAB0BB00DE2D8D /* AppDelegate.swift */; };
 		DF95C22E1CEAB0BB00DE2D8D /* GithubRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95C22D1CEAB0BB00DE2D8D /* GithubRepoViewController.swift */; };
@@ -23,11 +23,17 @@
 		DF95C25A1CEAB1D400DE2D8D /* GithubRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95C2591CEAB1D400DE2D8D /* GithubRepoViewModel.swift */; };
 		DF97A62B1CEC56E500F45E91 /* GithubRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF97A62A1CEC56E500F45E91 /* GithubRepoTableViewCell.swift */; };
 		DF97A62D1CEC579700F45E91 /* GithubRepoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF97A62C1CEC579700F45E91 /* GithubRepoTableViewCellViewModel.swift */; };
-		DF97A62F1CEC58A900F45E91 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF97A62E1CEC58A900F45E91 /* CommonViewModel.swift */; };
-		DFC4FD301CECD36F002507E0 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FD2F1CECD36F002507E0 /* CommonViewModel.swift */; };
-		DFC4FD341CECD52C002507E0 /* CommonViewModel~Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FD331CECD52C002507E0 /* CommonViewModel~Test.swift */; };
-		DFD68BE11CECC9C100242095 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD68BE01CECC9C100242095 /* Repo.swift */; };
-		DFD68BE41CECCA2600242095 /* RepoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD68BE31CECCA2600242095 /* RepoStore.swift */; };
+		DF97A62F1CEC58A900F45E91 /* MvvmCommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF97A62E1CEC58A900F45E91 /* MvvmCommonViewModel.swift */; };
+		DF988D501D1261310051E4A0 /* MvvmViewCommonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D4F1D1261310051E4A0 /* MvvmViewCommonDelegate.swift */; };
+		DF988D521D12617B0051E4A0 /* Mvvm+UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D511D12617B0051E4A0 /* Mvvm+UITableViewCell.swift */; };
+		DF988D5C1D1267BE0051E4A0 /* mvvm_demoTestStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D551D1267BE0051E4A0 /* mvvm_demoTestStores.swift */; };
+		DF988D5D1D1267BE0051E4A0 /* RepoStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D561D1267BE0051E4A0 /* RepoStoreMock.swift */; };
+		DF988D5E1D1267BE0051E4A0 /* TestCommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D571D1267BE0051E4A0 /* TestCommonViewModel.swift */; };
+		DF988D5F1D1267BE0051E4A0 /* TestGithubRepoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D581D1267BE0051E4A0 /* TestGithubRepoTableViewCellViewModel.swift */; };
+		DF988D601D1267BE0051E4A0 /* TestGithubRepoViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D591D1267BE0051E4A0 /* TestGithubRepoViewState.swift */; };
+		DF988D611D1267BE0051E4A0 /* TestRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D5A1D1267BE0051E4A0 /* TestRepo.swift */; };
+		DF988D621D1267BE0051E4A0 /* TestRepoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF988D5B1D1267BE0051E4A0 /* TestRepoStore.swift */; };
+		DFC4FD341CECD52C002507E0 /* MvvmCommonViewModel~Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FD331CECD52C002507E0 /* MvvmCommonViewModel~Test.swift */; };
 		ED1365C544F1575AEF1FCD05 /* Pods_mvvm_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80F1A52FE11DFFE95690A4D /* Pods_mvvm_demoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +65,7 @@
 		DF0D144F1CEC176900CB7BB1 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		DF0D14521CEC19C500CB7BB1 /* RepoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoStore.swift; sourceTree = "<group>"; };
 		DF0D14541CEC1AC800CB7BB1 /* RepoStoreImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoStoreImpl.swift; sourceTree = "<group>"; };
-		DF1FF3331CEAF1590065C636 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		DF1FF3331CEAF1590065C636 /* MvvmViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MvvmViewModelProtocol.swift; sourceTree = "<group>"; };
 		DF2033701D0FAF3D00C2861D /* Mvvm+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mvvm+UIViewController.swift"; sourceTree = "<group>"; };
 		DF95C2281CEAB0BB00DE2D8D /* mvvm-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF95C22B1CEAB0BB00DE2D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,11 +82,17 @@
 		DF95C2591CEAB1D400DE2D8D /* GithubRepoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoViewModel.swift; sourceTree = "<group>"; };
 		DF97A62A1CEC56E500F45E91 /* GithubRepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoTableViewCell.swift; sourceTree = "<group>"; };
 		DF97A62C1CEC579700F45E91 /* GithubRepoTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		DF97A62E1CEC58A900F45E91 /* CommonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
-		DFC4FD2F1CECD36F002507E0 /* CommonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
-		DFC4FD331CECD52C002507E0 /* CommonViewModel~Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommonViewModel~Test.swift"; sourceTree = "<group>"; };
-		DFD68BE01CECC9C100242095 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
-		DFD68BE31CECCA2600242095 /* RepoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoStore.swift; sourceTree = "<group>"; };
+		DF97A62E1CEC58A900F45E91 /* MvvmCommonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MvvmCommonViewModel.swift; sourceTree = "<group>"; };
+		DF988D4F1D1261310051E4A0 /* MvvmViewCommonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MvvmViewCommonDelegate.swift; sourceTree = "<group>"; };
+		DF988D511D12617B0051E4A0 /* Mvvm+UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mvvm+UITableViewCell.swift"; sourceTree = "<group>"; };
+		DF988D551D1267BE0051E4A0 /* mvvm_demoTestStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mvvm_demoTestStores.swift; sourceTree = "<group>"; };
+		DF988D561D1267BE0051E4A0 /* RepoStoreMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoStoreMock.swift; sourceTree = "<group>"; };
+		DF988D571D1267BE0051E4A0 /* TestCommonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCommonViewModel.swift; sourceTree = "<group>"; };
+		DF988D581D1267BE0051E4A0 /* TestGithubRepoTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGithubRepoTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		DF988D591D1267BE0051E4A0 /* TestGithubRepoViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGithubRepoViewState.swift; sourceTree = "<group>"; };
+		DF988D5A1D1267BE0051E4A0 /* TestRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRepo.swift; sourceTree = "<group>"; };
+		DF988D5B1D1267BE0051E4A0 /* TestRepoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRepoStore.swift; sourceTree = "<group>"; };
+		DFC4FD331CECD52C002507E0 /* MvvmCommonViewModel~Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MvvmCommonViewModel~Test.swift"; sourceTree = "<group>"; };
 		E4CA9C75913C47DD3405D846 /* Pods-mvvm-demoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-demoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm-demoUITests/Pods-mvvm-demoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4373DAFDE0A2C7BE8B011A4 /* Pods-mvvm-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-demoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm-demoTests/Pods-mvvm-demoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,10 +158,12 @@
 		DF0E7AD81CEC6A42008A9F6A /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DF97A62E1CEC58A900F45E91 /* CommonViewModel.swift */,
-				DF1FF3331CEAF1590065C636 /* ViewModelProtocol.swift */,
-				DFC4FD331CECD52C002507E0 /* CommonViewModel~Test.swift */,
+				DF97A62E1CEC58A900F45E91 /* MvvmCommonViewModel.swift */,
+				DF1FF3331CEAF1590065C636 /* MvvmViewModelProtocol.swift */,
+				DFC4FD331CECD52C002507E0 /* MvvmCommonViewModel~Test.swift */,
+				DF988D4F1D1261310051E4A0 /* MvvmViewCommonDelegate.swift */,
 				DF2033701D0FAF3D00C2861D /* Mvvm+UIViewController.swift */,
+				DF988D511D12617B0051E4A0 /* Mvvm+UITableViewCell.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -196,9 +210,13 @@
 		DF95C23F1CEAB0BB00DE2D8D /* mvvm-demoTests */ = {
 			isa = PBXGroup;
 			children = (
-				DFC4FD2E1CECD358002507E0 /* helpers */,
-				DFD68BE21CECCA0B00242095 /* stores */,
-				DFD68BDF1CECC9AA00242095 /* models */,
+				DF988D551D1267BE0051E4A0 /* mvvm_demoTestStores.swift */,
+				DF988D561D1267BE0051E4A0 /* RepoStoreMock.swift */,
+				DF988D571D1267BE0051E4A0 /* TestCommonViewModel.swift */,
+				DF988D581D1267BE0051E4A0 /* TestGithubRepoTableViewCellViewModel.swift */,
+				DF988D591D1267BE0051E4A0 /* TestGithubRepoViewState.swift */,
+				DF988D5A1D1267BE0051E4A0 /* TestRepo.swift */,
+				DF988D5B1D1267BE0051E4A0 /* TestRepoStore.swift */,
 				DF95C2421CEAB0BB00DE2D8D /* Info.plist */,
 			);
 			path = "mvvm-demoTests";
@@ -229,30 +247,6 @@
 				DF97A62A1CEC56E500F45E91 /* GithubRepoTableViewCell.swift */,
 			);
 			name = views;
-			sourceTree = "<group>";
-		};
-		DFC4FD2E1CECD358002507E0 /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				DFC4FD2F1CECD36F002507E0 /* CommonViewModel.swift */,
-			);
-			name = helpers;
-			sourceTree = "<group>";
-		};
-		DFD68BDF1CECC9AA00242095 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				DFD68BE01CECC9C100242095 /* Repo.swift */,
-			);
-			name = models;
-			sourceTree = "<group>";
-		};
-		DFD68BE21CECCA0B00242095 /* stores */ = {
-			isa = PBXGroup;
-			children = (
-				DFD68BE31CECCA2600242095 /* RepoStore.swift */,
-			);
-			name = stores;
 			sourceTree = "<group>";
 		};
 		EEE5E849C34831518F184453 /* Frameworks */ = {
@@ -528,17 +522,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF97A62D1CEC579700F45E91 /* GithubRepoTableViewCellViewModel.swift in Sources */,
-				DF1FF3341CEAF1590065C636 /* ViewModelProtocol.swift in Sources */,
+				DF988D521D12617B0051E4A0 /* Mvvm+UITableViewCell.swift in Sources */,
+				DF1FF3341CEAF1590065C636 /* MvvmViewModelProtocol.swift in Sources */,
 				DF0D14531CEC19C500CB7BB1 /* RepoStore.swift in Sources */,
+				DF988D501D1261310051E4A0 /* MvvmViewCommonDelegate.swift in Sources */,
 				DF0D14551CEC1AC800CB7BB1 /* RepoStoreImpl.swift in Sources */,
 				DF95C22E1CEAB0BB00DE2D8D /* GithubRepoViewController.swift in Sources */,
-				DFC4FD341CECD52C002507E0 /* CommonViewModel~Test.swift in Sources */,
+				DFC4FD341CECD52C002507E0 /* MvvmCommonViewModel~Test.swift in Sources */,
 				DF97A62B1CEC56E500F45E91 /* GithubRepoTableViewCell.swift in Sources */,
 				DF0D14501CEC176900CB7BB1 /* Repo.swift in Sources */,
 				DF2033711D0FAF3D00C2861D /* Mvvm+UIViewController.swift in Sources */,
 				DF95C22C1CEAB0BB00DE2D8D /* AppDelegate.swift in Sources */,
 				DF95C25A1CEAB1D400DE2D8D /* GithubRepoViewModel.swift in Sources */,
-				DF97A62F1CEC58A900F45E91 /* CommonViewModel.swift in Sources */,
+				DF97A62F1CEC58A900F45E91 /* MvvmCommonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,9 +542,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFD68BE11CECC9C100242095 /* Repo.swift in Sources */,
-				DFC4FD301CECD36F002507E0 /* CommonViewModel.swift in Sources */,
-				DFD68BE41CECCA2600242095 /* RepoStore.swift in Sources */,
+				DF988D5E1D1267BE0051E4A0 /* TestCommonViewModel.swift in Sources */,
+				DF988D621D1267BE0051E4A0 /* TestRepoStore.swift in Sources */,
+				DF988D611D1267BE0051E4A0 /* TestRepo.swift in Sources */,
+				DF988D5F1D1267BE0051E4A0 /* TestGithubRepoTableViewCellViewModel.swift in Sources */,
+				DF988D601D1267BE0051E4A0 /* TestGithubRepoViewState.swift in Sources */,
+				DF988D5C1D1267BE0051E4A0 /* mvvm_demoTestStores.swift in Sources */,
+				DF988D5D1D1267BE0051E4A0 /* RepoStoreMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,10 +709,12 @@
 			baseConfigurationReference = 2DEBE960500FECC504E2255C /* Pods-mvvm-demoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "mvvm-demoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "duynk.mvvm-demoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvvm-demo.app/mvvm-demo";
 			};
 			name = Debug;
@@ -722,6 +724,7 @@
 			baseConfigurationReference = F4373DAFDE0A2C7BE8B011A4 /* Pods-mvvm-demoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "mvvm-demoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "duynk.mvvm-demoTests";

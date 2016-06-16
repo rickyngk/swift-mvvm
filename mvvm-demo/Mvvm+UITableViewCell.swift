@@ -1,8 +1,8 @@
 //
-//  Mvvm+UIViewController.swift
+//  Mvvm+UITableViewCell.swift
 //  mvvm-demo
 //
-//  Created by NGUYEN KHANH DUY on 6/14/16.
+//  Created by NGUYEN KHANH DUY on 6/16/16.
 //  Copyright © 2016 NGUYEN KHANH DUY. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import RxSwift
 
-extension MvvmViewCommonDelegate where Self: MvvmUIViewController {
+extension MvvmViewCommonDelegate where Self: MvvmUITableViewCell {
     func injectViewModel(viewModel: MvvmCommonViewModel) -> MvvmCommonViewModel {
         viewModel.viewStateStream.subscribeNext { (state) in
             let newViewState = state.0
-        
+            
             if state.1 is MvvmViewStateNull {
                 self.onMvvmViewStateInit(newViewState)
                 self.onMvvmViewStateUpdated(newViewState)
@@ -22,13 +22,13 @@ extension MvvmViewCommonDelegate where Self: MvvmUIViewController {
                 self.onMvvmViewStateChanged(newViewState, oldViewState: state.1 as MvvmViewState)
                 self.onMvvmViewStateUpdated(newViewState)
             }
-        }
-        .addDisposableTo(viewModel.disposeBag)
+            }
+            .addDisposableTo(viewModel.disposeBag)
         self.viewModel = viewModel
         return viewModel
     }
 }
 
-class MvvmUIViewController: UIViewController {
+class MvvmUITableViewCell: UITableViewCell {
     var viewModel:MvvmCommonViewModel? = nil
 }

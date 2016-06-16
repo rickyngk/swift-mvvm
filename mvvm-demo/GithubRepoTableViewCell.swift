@@ -10,25 +10,28 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class GitHubRepoTableViewCell: UITableViewCell {
+class GitHubRepoTableViewCell: MvvmUITableViewCell {
     
     @IBOutlet weak var repoName: UILabel!
-    var viewModel:GithubRepoTableViewCellViewModel!
-    let bag = DisposeBag();
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        viewModel = GithubRepoTableViewCellViewModel()
-        viewModel.viewStateStream.subscribeNext { (data) in
-                let newViewState = data.0 as! GithubRepoTableViewCellViewState
-                self.repoName.text = newViewState.name
-            }
-            .addDisposableTo(bag);
+        self.injectViewModel(GithubRepoTableViewCellViewModel());
     }
     
     func updateCell(repo:Repo) {
-        self.viewModel.execute(GithubRepoTableViewCellViewModel.Command.UpdateData, data: repo)
+        self.viewModel?.execute(GithubRepoTableViewCellViewModel.Command.UpdateData, data: repo)
     }
 }
+
+extension GitHubRepoTableViewCell: MvvmViewCommonDelegate {
+    
+    func onMvvmViewStateInit(viewState: MvvmViewState) {}
+    func onMvvmViewStateChanged(newViewState: MvvmViewState, oldViewState: MvvmViewState) {}
+    
+    func onMvvmViewStateUpdated(viewState: MvvmViewState) {
+        let viewState = viewState as! GithubRepoTableViewCellViewState
+        self.repoName.text = viewState.name
+    }
+}
+

@@ -53,24 +53,24 @@ class GithubRepoViewController: MvvmUIViewController {
 
 extension GithubRepoViewController: MvvmViewCommonDelegate {
     
-    func onMvvmViewStateInit(viewState: ViewState) {
+    func onMvvmViewStateInit(viewState: MvvmViewState) {
         let viewState = viewState as! GithubRepoViewState
         self.tableData.onNext(viewState.repoData)
-        
-        self.myButton.enabled = !viewState.isLoading
-        self.loadingIndicator.hidden = !viewState.isLoading
-        self.loadingIndicator.startAnimating()
     }
     
-    func onMvvmViewStateChanged(newViewState: ViewState, oldViewState: ViewState) {
+    func onMvvmViewStateChanged(newViewState: MvvmViewState, oldViewState: MvvmViewState) {
         let newViewState = newViewState as! GithubRepoViewState
         let oldViewState = oldViewState as! GithubRepoViewState
         if oldViewState.repoData != newViewState.repoData {
             self.tableData.onNext(newViewState.repoData)
         }
+    }
+    
+    func onMvvmViewStateUpdated(viewState: MvvmViewState) {
+        let viewState = viewState as! GithubRepoViewState
         
-        self.myButton.enabled = !newViewState.isLoading
-        self.loadingIndicator.hidden = !newViewState.isLoading
+        self.myButton.enabled = !viewState.isLoading
+        self.loadingIndicator.hidden = !viewState.isLoading
         self.loadingIndicator.startAnimating()
     }
 }

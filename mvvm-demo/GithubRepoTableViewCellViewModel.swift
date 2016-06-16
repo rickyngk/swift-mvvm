@@ -10,11 +10,11 @@ import Foundation
 
 import Foundation
 
-struct GithubRepoTableViewCellViewState: ViewState {
+struct GithubRepoTableViewCellViewState: MvvmViewState {
     let name:String;
 }
 
-class GithubRepoTableViewCellViewModel: CommonViewModel {
+class GithubRepoTableViewCellViewModel: MvvmCommonViewModel {
     internal enum Command:Int {
         case UpdateData = 0
     }

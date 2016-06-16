@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct GithubRepoViewState: ViewState {
+struct GithubRepoViewState: MvvmViewState {
     let isLoading: Bool
     let repoData: [Repo]
     
@@ -20,7 +20,7 @@ struct GithubRepoViewState: ViewState {
     }
 }
 
-class GithubRepoViewModel: CommonViewModel {
+class GithubRepoViewModel: MvvmCommonViewModel {
     internal enum Command:Int {
         case FetchData = 1
     }

@@ -1,5 +1,5 @@
 //
-//  CommonViewModel.swift
+//  MvvmCommonViewModel.swift
 //  mvvm-demo
 //
 //  Created by NGUYEN KHANH DUY on 5/18/16.
@@ -10,18 +10,18 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class CommonViewModel: ViewModelProtocol {
-    var viewStateStream = PublishSubject<(ViewState, ViewState)>()
-    var _oldState: ViewState?
+class MvvmCommonViewModel: MvvmViewModelProtocol {
+    var viewStateStream = PublishSubject<(MvvmViewState, MvvmViewState)>()
+    var _oldState: MvvmViewState?
     var disposeBag = DisposeBag()
     
-    var viewState:ViewState?  {
+    var viewState:MvvmViewState?  {
         willSet(newState) {
             _oldState = self.viewState
         }
         didSet {
             if (_oldState == nil) {
-                viewStateStream.onNext((self.viewState!, ViewStateNull.sharedInstance))
+                viewStateStream.onNext((self.viewState!, MvvmViewStateNull.sharedInstance))
             } else {
                 viewStateStream.onNext((self.viewState!, _oldState!))
             }
@@ -30,11 +30,11 @@ class CommonViewModel: ViewModelProtocol {
     
     func execute(command:Any, data:AnyObject? = NSNull()) {}
     
-    func getViewState() -> ViewState {
+    func getViewState() -> MvvmViewState {
         return viewState!
     }
     
-    func setViewState(vs: ViewState) {
+    func setViewState(vs: MvvmViewState) {
         self.viewState = vs
     }
 }
